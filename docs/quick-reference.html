@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Allowed functions - 42 webserv project</title>
+</head>
+<body>
+    <h1>Allowed functions - 42 webserv project</h1>
+
+    <h2>Introduction</h2>
+    <p>This guide provides a brief explanation of C/C++ programming functions allowed in 42-webserv project. It covers functions related to process manipulation, socket management, file and directory I/O, signal handling, and more.</p>
+
+    <h2>Program Execution</h2>
+    <ul>
+        <li><a href="https://man7.org/linux/man-pages/man2/execve.2.html">execve</a>: Replaces the current process image with a new program.</li>
+    </ul>
+
+    <h2>File Descriptor Management</h2>
+    <ul>
+        <li><a href="https://man7.org/linux/man-pages/man2/dup.2.html">dup</a> and <a href="https://man7.org/linux/man-pages/man2/dup.2.html">dup2</a>: Duplicates an existing file descriptor.</li>
+        <li><a href="https://man7.org/linux/man-pages/man2/pipe.2.html">pipe</a>: Creates a communication channel (pipe) between processes.</li>
+    </ul>
+
+    <h2>Error Handling</h2>
+    <ul>
+        <li><a href="https://man7.org/linux/man-pages/man3/strerror.3.html">strerror</a>: Converts an error code into a human-readable error message.</li>
+        <li><a href="https://linux.die.net/man/3/gai_strerror">gai_strerror</a>: Converts an address resolution error code into an error message.</li>
+    </ul>
+
+    <h2>Error Variables</h2>
+    <ul>
+        <li><a href="https://man7.org/linux/man-pages/man3/errno.3.html">errno</a>: A global variable that stores the error code after an error occurs.</li>
+    </ul>
+
+    <h2>Processes</h2>
+    <ul>
+        <li><a href="https://man7.org/linux/man-pages/man2/fork.2.html">fork</a>: Creates a new child process from the parent process.</li>
+        <li><a href="https://linux.die.net/man/2/waitpid">waitpid</a>: Waits for the termination of a child process.</li>
+        <li><a href="https://man7.org/linux/man-pages/man2/kill.2.html">kill</a>: Sends a signal to a process.</li>
+        <li><a href="https://man7.org/linux/man-pages/man7/signal.7.html">signal</a>: Defines custom signal handling.</li>
+    </ul>
+
+    <h2>Socket Handling</h2>
+    <ul>
+        <li><a href="https://man7.org/linux/man-pages/man2/socketpair.2.html">socketpair</a>: Creates a pair of local domain sockets.</li>
+        <li><a href="https://linux.die.net/man/3/htons">htons</a>, <a href="https://linux.die.net/man/3/htons">htonl</a>: Converts port and address values to network byte order.</li>
+        <li><a href="https://linux.die.net/man/3/htons">ntohs</a>, <a href="https://linux.die.net/man/3/htons">ntohl</a>: Converts port and address values from network byte order to host byte order.</li>
+        <li><a href="https://man7.org/linux/man-pages/man2/select.2.html">select</a>, <a href="https://man7.org/linux/man-pages/man2/poll.2.html">poll</a>: Waits for I/O events on multiple file descriptors.</li>
+        <li><a href="https://man7.org/linux/man-pages/man7/epoll.7.html">epoll (epoll_create, epoll_ctl, epoll_wait)</a>: Efficiently manages I/O events using the `epoll` interface.</li>
+        <li><a href="https://man.freebsd.org/cgi/man.cgi?query=kqueue&sektion=2">kqueue (kqueue, kevent)</a>: Provides similar functionality to `epoll` on BSD systems.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>This guide provides an overview of common functions used in WebServ 42 Project. </p>
+</body>
+</html>

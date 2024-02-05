@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Request Example</title>
+</head>
+<body>
+
+    <h1>Delete Request Form</h1>
+
+    <form action="/delete-resource" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <label for="resourceId">Resource ID to Delete:</label>
+        <input type="text" id="resourceId" name="resourceId" required>
+        <button type="submit">Delete Resource</button>
+    </form>
+
+</body>
+</html>

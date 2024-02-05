@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="nmoreira" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>42 WebServer</title>
+	<link rel="icon" type="image/x-icon" href="./favicon-32x32.png">
+	<link rel="stylesheet" href="./css/style1.css">
+</head>
+
+<body>
+	<h1>WebServer</h1>
+	<div class="container1">
+		<div class="post">
+			<h3>POST (form)</h3>
+			<form action="/submit" class="form" method="post">
+				<p>
+				<label for="username" class="form__label">name</label><br>
+				<input type="text" id="username" name="username" required/>
+				<br><br>
+				<label for="password" class="form_label">password</label><br>
+    			<input type="password" id="password" name="password" required>
+				</p>
+				<br>
+				<button class="button_1" type="submit">send</button>
+			</form>
+		</div>
+		<br>
+		<div class="post_file">
+			<h3>POST (upload)</h3>
+			<form class="quote" action="/upload" method="post" enctype="multipart/form-data">
+				<div class="custom-file-input">
+					<label for="inpFile" class="button_1">choose file</label>
+					<span id="customFileLabel"></span>
+					<input type="file" name="inpFile" id="inpFile" style="display: none;"/>
+				</div>
+				<div class="image-preview" id="imagePreview">
+					<img src="" alt="Image Preview" class="image-preview__image">
+					<span class="image-preview__default-text">image preview</span>
+				</div>
+				<button class="button_1" type="submit">send</button>
+			</form>
+		</div>
+		<br>
+		<div class="delete">
+			<h3>DELETE</h3>
+			<form action="/delete-resource" method="post">
+				<input type="hidden" name="_method" value="delete">
+				<label for="resourceId">file name</label> <br>
+				<input type="text" id="resourceId" name="resourceId" required>
+				<br><br>
+				<input class="button_1" type="submit" value="delete file">
+			</form>
+		</div>
+		<br><br>
+		<a href="./index.html" target="">home</a>
+		<!-- <div class="explanation">
+			<h3>Others</h3>
+			<ul>
+				<li><a href="downloads/">List the files </a></li>
+				<li><a href="./assets/en.subject.pdf" target="_blank">subject</a></li>
+				<li><a href="./cgi.html" target="">CGI</a></li>
+				<li><a href="./webserver/cgi-bin/inf.sh/">CGI infinite loop</a></li>
+				<li><a href="https://google.com" target="_blank">Google</a></li>
+				<li><a href="./index.html" target="">Home</a></li>
+			</ul>
+		</div> -->
+		<!-- <footer>
+			<p><a href="./team.html" target="">Team</a> Web Design Copyright &copy; 2023</p>
+		</footer> -->
+	</div>
+	<script src="./js/main.js"></script>
+	<footer class="home">
+		<p><a href="./team.html" target="">team</a> web design copyright &copy; 2024</p>
+	</footer>
+</body>
+
+</html>

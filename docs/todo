@@ -1,0 +1,32 @@
+/*acrescentar envs
+checkar se e dir exec x
+tratar do loop tempo limite? server side?
+post form ler body gravar map mandar resposta
+checkar permissoes access x
+send byte a byte?
+errno dps do read/write
+pasta dos downloads/uploads
+cookies
+upload file with error
+status codes?
+protecao https?*/
+
+proteger contra requests que nao ta programado p lidar tipo Post upload sem cgi
+testar ficheiros grandes 42
+send binary test x varios clients
+form depois do post
+\n no form
+devolver html codes
+timeout send/socket activity
+seguranca testar postman telnet urls
+checkar permissao antes do post delete get cgi
+pasta ficheiros dentro www
+cookie
+https
+
+string sendCode(string code, msg) {
+	string ret;
+
+	ret = "Content-type: text/html\n\n<html><body>\n<h2>Status:" + code + msg + "</h2>\n</body></html>";
+	return ret;
+}

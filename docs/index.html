@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="nmoreira" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>42 WebServer</title>
+	<link rel="icon" type="image/x-icon" href="./favicon.ico">
+	<link rel="stylesheet" href="./css/style1.css">
+</head>
+
+<body>
+	<h1>42 WebServer</h1>
+	<div class="container">
+		<!-- <h1>42 WebServer</h1> -->
+		<div class="get">
+			<h3>GET mode</h3>
+			<form action="" class="form" method="get">
+				<label for="name" class="form__label">Name</label><br>
+				<input type="text" placeholder="" class="form__input" id="name" />
+				<button class="button_1" type="submit">Send</button>
+				<!-- <br><br>
+				<label for="email" class="form__label">Email</label><br>
+				<input type="email" placeholder="" class="form__input" id="email" /> -->
+				<br>
+			</form>
+		</div>
+		<br>
+		<div class="post">
+			<h3>POST mode</h3>
+			<form action="" class="form" method="post">
+				<label for="name" class="form__label">Name</label><br>
+				<input type="text" placeholder="" class="form__input" id="name" />
+				<button class="button_1" type="submit">Send</button>
+				<br>
+			</form>
+		</div>
+		<br>
+		<div class="post_file">
+			<h3>POST mode - File</h3>
+			<form class="quote" action="/upload" method="post" enctype="multipart/form-data">
+				<div class="custom-file-input">
+					<label for="inpFile" class="button_1">Choose File</label>
+					<span id="customFileLabel"></span>
+					<input type="file" name="inpFile" id="inpFile" style="display: none;" />
+				</div>
+				<div class="image-preview" id="imagePreview">
+					<img src="" alt="Image Preview" class="image-preview__image">
+					<span class="image-preview__default-text">Image Preview</span>
+				</div>
+				<button class="button_1" type="submit">Send</button>
+			</form>
+		</div>
+		<br>
+		<div class="delete">
+			<h3>DELETE mode</h3>
+			<form onsubmit="excluirArquivo(event)">
+				<label for="nomeArquivo">Nome do Arquivo</label> <br>
+				<input type="text" id="nomeArquivo" name="nomeArquivo" required>
+				<br><br>
+				<input class="button_1" type="submit" value="Excluir Arquivo">
+			</form>
+		</div>
+		<br>
+		<div class="explanation">
+			<h3>Others</h3>
+			<ul>
+				<li><a href="downloads/">List the files </a></li>
+				<li><a href="./assets/en.subject.pdf" target="_blank">subject</a></li>
+				<li><a href="./cgi.html" target="">CGI</a></li>
+				<li><a href="https://google.com" target="_blank">Google</a></li>
+			</ul>
+		</div>
+		<!-- <footer>
+			<p><a href="./team.html" target="">Team</a> Web Design Copyright &copy; 2023</p>
+		</footer> -->
+	</div>
+	<script src="./js/main.js"></script>
+	<footer class="home">
+		<p><a href="./team.html" target="">Team</a> Web Design Copyright &copy; 2023</p>
+	</footer>
+</body>
+
+</html>

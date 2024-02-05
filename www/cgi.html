@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="nmoreira" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>42 WebServer</title>
+	<link rel="icon" type="image/x-icon" href="./favicon-32x32.png">
+	<link rel="stylesheet" href="./css/style1.css">
+</head>
+
+<body>
+	<h1>WebServer</h1>
+	<div class="container1">
+		<!-- <h1>42 WebServer</h1> -->
+		<div class="get_cgi">
+			<h3>GET (using query string) CGI from /assets</h3>
+			<form action="/webserver/cgi-bin/file.sh/assets" class="form">
+				<label for="name" class="form__label">file name</label><br>
+				<input type="text" placeholder="" class="form__input" id="name" name="fileCGI"/>
+				<button class="button_1" type="submit">send</button>
+				<!-- <br><br>
+				<label for="email" class="form__label">Email</label><br>
+				<input type="email" placeholder="" class="form__input" id="email" /> -->
+				<br>
+			</form>
+		</div>
+		<br>
+		<div class="post">
+			<h3>POST (upload) CGI</h3>
+			<form class="quote" action="/webserver/cgi-bin/load.py/assets" method="post" enctype="multipart/form-data">
+				<div class="custom-file-input">
+					<label for="inpFile" class="button_1">choose file</label>
+					<span id="customFileLabel"></span>
+					<input type="file" name="inpFile" id="inpFile" style="display: none;" />
+				</div>
+				<div class="image-preview" id="imagePreview">
+					<img src="" alt="Image Preview" class="image-preview__image">
+					<span class="image-preview__default-text">image preview</span>
+				</div>
+				<button class="button_1" type="submit">send</button>
+			</form>
+		</div>
+		<br>
+		<br><br>
+		<!-- <div class="explanation">
+			<h3>Others</h3>
+			<ul>
+				<li><a href="./index.html">Home</a></li>
+			</ul>
+		</div> -->
+		<a href="./index.html" target="">home</a>
+		<!-- <footer>
+			<p><a href="./team.html" target="">Team</a> Web Design Copyright &copy; 2023</p>
+		</footer> -->
+	</div>
+	<script src="./js/main.js"></script>
+	<footer>
+		<p><a href="./team.html" target="">team</a> web design copyright &copy; 2024</p>
+	</footer>
+</body>
+
+</html>

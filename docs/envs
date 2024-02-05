@@ -1,0 +1,81 @@
+Key 	Value
+DOCUMENT_ROOT 	The root directory of your server
+HTTP_COOKIE 	The visitor's cookie, if one is set
+HTTP_HOST 	The hostname of the page being attempted
+HTTP_REFERER 	The URL of the page that called your program
+HTTP_USER_AGENT 	The browser type of the visitor
+HTTPS 	"on" if the program is being called through a secure server
+PATH 	The system path your server is running under
+QUERY_STRING 	The query string (see GET, below)
+REMOTE_ADDR 	The IP address of the visitor
+REMOTE_HOST 	The hostname of the visitor (if your server has reverse-name-lookups on; otherwise this is the IP address again)
+REMOTE_PORT 	The port the visitor is connected to on the web server
+REMOTE_USER 	The visitor's username (for .htaccess-protected pages)
+*REQUEST_METHOD 	GET or POST
+*REQUEST_URI 	The interpreted pathname of the requested document or CGI (relative to the document root)
+SCRIPT_FILENAME 	The full pathname of the current CGI
+SCRIPT_NAME 	The interpreted pathname of the current CGI (relative to the document root)
+SERVER_ADMIN 	The email address for your server's webmaster
+SERVER_NAME 	Your server's fully qualified domain name (e.g. www.cgi101.com)
+SERVER_PORT 	The port number your server is listening on
+SERVER_SOFTWARE 	The server software you're using (e.g. Apache 1.3)
+
+"AUTH_TYPE"
+"CONTENT_LENGTH"
+"CONTENT_TYPE"
+"GATEWAY_INTERFACE"
+*"PATH_INFO"
+"PATH_TRANSLATED"
+*"QUERY_STRING"
+"REMOTE_ADDR"
+"REMOTE_HOST"
+"REMOTE_IDENT"
+"REMOTE_USER"
+"REQUEST_METHOD"
+"SCRIPT_NAME"
+"SERVER_NAME"
+"SERVER_PORT"
+*"SERVER_PROTOCOL"
+"SERVER_SOFTWARE"
+
+REQUEST_METHOD: Specifies the HTTP request method (e.g., GET or POST).
+QUERY_STRING: Contains the query string portion of the URL.
+CONTENT_TYPE: Specifies the type of data sent to the server if the request method is POST.
+CONTENT_LENGTH: Indicates the length of the content if the request method is POST.
+SCRIPT_NAME: Path to the CGI script.
+SERVER_NAME: The server's hostname or IP address.
+SERVER_PORT: The port number on which the server is listening.
+
+    this->_env["GATEWAY_INTERFACE"] = std::string("CGI/1.1");
+	this->_env["SCRIPT_NAME"] = cgi_exec;//
+    this->_env["SCRIPT_FILENAME"] = this->_cgi_path;
+    this->_env["PATH_INFO"] = this->_cgi_path;//
+    this->_env["PATH_TRANSLATED"] = this->_cgi_path;//
+    this->_env["REQUEST_URI"] = this->_cgi_path;//
+    this->_env["SERVER_NAME"] = req.getHeader("host");
+    this->_env["SERVER_PORT"] ="8002";
+    this->_env["REQUEST_METHOD"] = req.getMethodStr();
+    this->_env["SERVER_PROTOCOL"] = "HTTP/1.1";
+    this->_env["REDIRECT_STATUS"] = "200";
+	this->_env["SERVER_SOFTWARE"] = "AMANIX";
+	this->_env["AUTH_TYPE"] = "Basic";
+	this->_env["CONTENT_LENGTH"] = req.getHeader("content-length");
+	this->_env["CONTENT_TYPE"] = req.getHeader("content-type");
+    this->_env["GATEWAY_INTERFACE"] = "CGI/1.1";
+	poz = findStart(this->_cgi_path, "cgi-bin/");
+	this->_env["SCRIPT_NAME"] = this->_cgi_path;
+    this->_env["SCRIPT_FILENAME"] = ((poz < 0 || (size_t)(poz + 8) > this->_cgi_path.size()) ? "" : this->_cgi_path.substr(poz + 8, this->_cgi_path.size())); // check dif cases after put right parametr from the response
+    this->_env["PATH_INFO"] = getPathInfo(req.getPath(), it_loc->getCgiExtension());
+    this->_env["PATH_TRANSLATED"] = it_loc->getRootLocation() + (this->_env["PATH_INFO"] == "" ? "/" : this->_env["PATH_INFO"]);
+    this->_env["QUERY_STRING"] = decode(req.getQuery());
+    this->_env["REMOTE_ADDR"] = req.getHeader("host");
+	poz = findStart(req.getHeader("host"), ":");
+    this->_env["SERVER_NAME"] = (poz > 0 ? req.getHeader("host").substr(0, poz) : "");
+    this->_env["SERVER_PORT"] = (poz > 0 ? req.getHeader("host").substr(poz + 1, req.getHeader("host").size()) : "");
+    this->_env["REQUEST_METHOD"] = req.getMethodStr();
+    this->_env["HTTP_COOKIE"] = req.getHeader("cookie");
+    this->_env["DOCUMENT_ROOT"] = it_loc->getRootLocation();
+	this->_env["REQUEST_URI"] = req.getPath() + req.getQuery();
+    this->_env["SERVER_PROTOCOL"] = "HTTP/1.1";
+    this->_env["REDIRECT_STATUS"] = "200";
+	this->_env["SERVER_SOFTWARE"] = "AMANIX";
