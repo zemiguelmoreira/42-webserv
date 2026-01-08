@@ -2,11 +2,11 @@
 
 A high-performance HTTP/1.1 web server implementation in C++, featuring configuration management, CGI support, request/response handling, and modern web server capabilities.
 
-## 🌐 Overview
+## Overview
 
 WebServ is a complete HTTP server implementation that handles HTTP/1.1 requests, supports multiple server configurations, CGI execution, and provides comprehensive error handling. The project demonstrates advanced C++ programming, network programming, and web server architecture principles.
 
-## ✨ Features
+## Features
 
 ### Core HTTP Server
 - **HTTP/1.1 Protocol**: Full HTTP/1.1 specification support
@@ -34,7 +34,7 @@ WebServ is a complete HTTP server implementation that handles HTTP/1.1 requests,
 - **Timeout Management**: Connection timeout handling
 - **Memory Management**: Proper resource allocation and cleanup
 
-## 🏗️ Architecture
+## Architecture
 
 ### Core Components
 
@@ -77,7 +77,7 @@ Client Request → WebServer → HandleData → Response/CGI → Client
   Accept       Events     Request    Response
 ```
 
-## 🚀 Building and Running
+## Building and Running
 
 ### Prerequisites
 - C++98 compatible compiler (GCC/G++)
@@ -116,7 +116,7 @@ make re
 ./webserv /path/to/your/config.conf
 ```
 
-## 📋 Configuration
+## Configuration
 
 ### Configuration File Format
 ```nginx
@@ -201,7 +201,7 @@ class HandleCgi {
 };
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 42-webserv/
@@ -231,7 +231,7 @@ class HandleCgi {
 └── README.md             # Documentation
 ```
 
-## 🌍 HTTP Methods Supported
+## HTTP Methods Supported
 
 ### GET
 - Static file serving
@@ -250,7 +250,7 @@ class HandleCgi {
 - Resource removal
 - Error handling for non-existent resources
 
-## 🔍 Key Features Explained
+## Key Features Explained
 
 ### 1. Configuration Parsing
 - Custom parser for `.conf` files
@@ -282,7 +282,7 @@ class HandleCgi {
 - Directory listing
 - File upload handling
 
-## 🧪 Testing
+## Testing
 
 ### Manual Testing
 ```bash
@@ -314,7 +314,7 @@ ab -n 1000 -c 10 http://localhost:8080/
 # Open http://localhost:8080/ in various browsers
 ```
 
-## 🐛 Debugging
+## Debugging
 
 ### Compilation Flags
 ```bash
@@ -346,7 +346,7 @@ valgrind --leak-check=full --show-leak-kinds=all ./webserv config.conf
 - **String manipulation**: std::string methods
 - **Exception handling**: try-catch blocks
 
-## 🔧 Configuration Examples
+## Configuration Examples
 
 ### Basic Server
 ```nginx
@@ -392,7 +392,7 @@ server {
 }
 ```
 
-## 🔗 Related Projects
+## Related Projects
 
 - **42-transcendence**: Web gaming platform
 - **42-minishell**: Unix shell implementation
